@@ -10,7 +10,7 @@ function Header() {
             <Link href="/">
                 <Image
                   className='rounded-full'
-                  src = '/../public/images/memoji.png'
+                  src = '../public/images/memoji.PNG'
                   width={50}
                   height={50}
                   alt='logo' />
