@@ -49,7 +49,7 @@ export const RichTextComponents = {
                 <Link
                     href={value.href}
                     rel={rel}
-                    className="underline decoration-[#F7AB0A] hover:decoration-black"
+                    className="underline decoration-[#2570d1] hover:decoration-black"
                 >
                     {children}
                 </Link>

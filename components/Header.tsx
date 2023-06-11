@@ -21,7 +21,7 @@ function Header() {
         <div>
             <Link
               href='https://home.brandonpyle.com'
-              className='px-5 py-3 text-sm md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full text-center'>
+              className='px-5 py-3 text-sm md:text-base bg-gray-900 text-[#2570d1] flex items-center rounded-full text-center'>
                 Check out my homelab!
               </Link>
 
