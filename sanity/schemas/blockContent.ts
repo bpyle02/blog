@@ -1,4 +1,5 @@
 import {defineType, defineArrayMember, defineField} from 'sanity'
+import { MdCode } from 'react-icons/md'
 
 /**
  * This is the schema type for block content used in the post document type
@@ -10,7 +11,8 @@ import {defineType, defineArrayMember, defineField} from 'sanity'
  *    type: 'blockContent'
  *  }
  */
- 
+
+
 export default defineType({
   title: 'Block Content',
   name: 'blockContent',
@@ -37,8 +39,11 @@ export default defineType({
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting
         decorators: [
+          {title: 'Code', value: 'code'},
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
+          {title: 'Underline', value: 'underline'},
+          {title: 'Strikethrough', value: 'strike-through'},
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -56,7 +61,8 @@ export default defineType({
           },
         ],
       },
-    }),
+    },
+    ),
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
@@ -71,5 +77,15 @@ export default defineType({
         }
       ]
     }),
+    defineArrayMember({
+      name: 'myCodeField',
+      title: 'My code field',
+      type: 'code',
+      // icon: MdCode,
+      options: {
+        language: 'cpp',
+        withFilename: true,
+      },
+    })
   ],
 })
