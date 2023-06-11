@@ -62,6 +62,11 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      type: 'markdown',
+      name: 'markdown',
+      title: 'Markdown'
+    })
   ],
 
   preview: {
