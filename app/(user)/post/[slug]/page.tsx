@@ -102,9 +102,9 @@ async function Post({params: {slug}}: Props) {
 
                 <div className="">
                     {post.comments.map((comment) => (
-                        <div className="rounded-lg border-2 border-gray-300 p-4 mt-8">
-                            <p key={comment._id} className="font-bold text-lg">{comment.name}</p>
-                            <p key={comment._id}>{comment.text}</p>
+                        <div key={comment._id} className="rounded-lg border-2 border-gray-300 p-4 mt-8">
+                            <p className="font-bold text-lg">{comment.name}</p>
+                            <p>{comment.text}</p>
                         </div>
                     ))}
                 </div>
