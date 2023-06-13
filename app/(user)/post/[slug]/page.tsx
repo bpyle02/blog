@@ -1,9 +1,12 @@
+"use client"
+
 import { client } from "@/lib/sanity.client";
 import urlFor from "@/lib/urlFor";
 import { groq } from "next-sanity";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../../../components/RichTextComponents.tsx";
+import { Form } from '../../../../components/Form.tsx'
 
 type Props = {
     params: {
@@ -33,7 +36,12 @@ async function Post({params: {slug}}: Props) {
         {
             ...,
             author->,
-            categories[]->
+            categories[]->,
+            "comments": *[_type == 'comment' && post._ref == ^._id] {
+                name,
+                text,
+                _createdAt
+            }
         }
     `
 
@@ -41,6 +49,7 @@ async function Post({params: {slug}}: Props) {
 
     return (
         <div>
+            <hr className="border-[#2570d1] mb-10" />
             <img
                 className="w-full h-auto object-cover"
                 src={urlFor(post.mainImage).url()}
@@ -82,6 +91,23 @@ async function Post({params: {slug}}: Props) {
                 </section>
 
                 <PortableText value={post.body} components={RichTextComponents} />
+                
+                <hr className="border-[#2570d1] mt-8" />
+                
+                <h1 className="text-4xl font-extrabold mt-8 mb-5">Comments</h1>
+
+                <div className="">
+                    <Form _id={post._id} />
+                </div>
+
+                <div className="">
+                    {post.comments.map((comment) => (
+                        <div className="rounded-lg border-2 border-gray-300 p-4 mt-8">
+                            <p key={comment._id} className="font-bold text-lg">{comment.name}</p>
+                            <p key={comment._id}>{comment.text}</p>
+                        </div>
+                    ))}
+                </div>
 
             </article>
         </div>
