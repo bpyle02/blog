@@ -66,10 +66,10 @@ function BlogList({posts}: Props) {
                 <div className="group-hover:scale-105 transition-transform duration-200 ease-out">
                     <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
     
-                            <div className="flex bg-white shadow-xl rounded-xl">
+                            <div className="md:flex bg-white shadow-xl rounded-xl md:w-full w-2/3 mx-auto">
                                 {/* <div className="bg-blue-500 w-3/12">mhgm</div> */}
                                 <Image
-                                className="object-contain object-left rounded-l-xl lg:object-center w-1/4"
+                                className="md:object-contain md:object-center md:rounded-l-xl md:rounded-r-none rounded-t-xl md:w-1/4"
                                 src={urlFor(post.mainImage).url()}
                                 alt={post.author.name}
                                 width={400}
@@ -101,8 +101,11 @@ function BlogList({posts}: Props) {
                                 <div>
                                     <div className="p-2">
                                         <div className="flex-1">
-                                            <div className="flex flex-row">
-                                                <p className="text-lg font-bold">{post.title} ·&nbsp;</p>
+                                            <div className="md:flex md:flex-row">
+                                                <div className="flex flex-row">
+                                                    <p className="text-lg font-bold">{post.title}</p>
+                                                    <p className="md:text-lg md:font-bold md:visible invisible">&nbsp;·&nbsp;</p>
+                                                </div>
                                                 <p className="text-lg">
                                                     {new Date(post._createdAt).toLocaleDateString(
                                                         "en-US", {
