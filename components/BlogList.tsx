@@ -62,7 +62,7 @@ function BlogList({posts}: Props) {
     <div className="">
         <p className = "text-center text-2xl text-black sm:text-4xl font-bold">Recent Posts</p>
         {posts.map((post) => (
-            <div key={post._id} className="group m-10">
+            <div key={post._id} className="group md:mx-10 my-10">
                 <div className="group-hover:scale-105 transition-transform duration-200 ease-out">
                     <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
     
