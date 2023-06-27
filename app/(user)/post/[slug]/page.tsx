@@ -49,7 +49,6 @@ async function Post({params: {slug}}: Props) {
 
     return (
         <div>
-            <hr className="border-[#2570d1] mb-10" />
             <img
                 className="w-full h-auto object-cover"
                 src={urlFor(post.mainImage).url()}
