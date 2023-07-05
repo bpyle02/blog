@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
 
 function Card()
@@ -8,7 +9,9 @@ function Card()
             <div className = "flex flex-col justify-center max-w-xs mx-auto bg-white shadow-xl rounded-xl p-5">
                 <div className = "">
                     {/* <img className = "w-32 mx-auto shadow-xl rounded-full drop-shadow-sm dark:shadow-gray-100/10" src = {profile} alt = ""/> */}
-                    <Image className="w-32 mx-auto shadow-xl rounded-full drop-shadow-sm" src="/memoji.png" alt="profile photo" width={128} height={128} />
+                    <Link href="/">
+                        <Image className="w-32 mx-auto shadow-xl rounded-full drop-shadow-sm" src="/memoji.png" alt="profile photo" width={128} height={128} />
+                    </Link>
                 </div>
                 <div className = "text-center mt-5">
                     <p className = "text-xl sm:text-2xl text-gray-900 font-bold">Brandon Pyle</p>

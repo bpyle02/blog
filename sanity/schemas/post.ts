@@ -53,6 +53,21 @@ export default defineType({
       of: [{type: 'reference', to: {type: 'category'}}],
     }),
     defineField({
+      name: 'isProject',
+      title: 'Is Project',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'code',
+      title: 'Code',
+      type: 'url',
+    }),
+    defineField({
+      name: 'liveDemo',
+      title: 'Live Demo',
+      type: 'url',
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',

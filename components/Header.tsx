@@ -65,6 +65,9 @@ function Header()
                   <Link href = "/about" className = "p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">About</Link>
                 </button>
                 <button>
+                  <Link href = "/blog" className = "p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Blog</Link>
+                </button>
+                <button>
                   <Link href = "https://cloud.brandonpyle.com/s/G2mFSSXa4nak2xz" className = "p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Download my Resume</Link>
                 </button>
             </div>

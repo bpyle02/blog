@@ -2,6 +2,7 @@ import Image from "next/image";
 import urlFor from "@/lib/urlFor";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import ClientSideRoute from "./ClientSideRoute";
+import Link from "next/link";
 
 type Props = {
     posts: Post[];
@@ -60,11 +61,11 @@ function BlogList({posts}: Props) {
     // </div> 
 
     <div className="">
-        <p className = "text-center text-2xl text-black sm:text-4xl font-bold">Recent Posts</p>
+        <p className = "text-center text-2xl text-black sm:text-4xl font-bold">Projects</p>
         {posts.map((post) => (
             <div key={post._id} className="group md:mx-10 my-10 -mx-4">
                 <div className="group-hover:scale-105 transition-transform duration-200 ease-out">
-                    <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>    
+                    <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
                         <div className="md:flex bg-white shadow-xl rounded-xl md:w-full w-2/3 mx-auto">
                             <Image
                             className="md:object-contain md:object-center md:rounded-l-xl md:rounded-r-none rounded-t-xl md:w-1/4"
@@ -120,6 +121,10 @@ function BlogList({posts}: Props) {
                                         Read Post
                                         <ArrowRightIcon className="ml-2 h-4 w-4 mt-1 -rotate-45" />
                                     </p>
+                                    <div className="mt-2">
+                                        <Link href={post.code} className="p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Code</Link>
+                                        <Link href={post.liveDemo} className="p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Live Demo</Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
