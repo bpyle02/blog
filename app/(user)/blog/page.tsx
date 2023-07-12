@@ -4,7 +4,7 @@ import BlogList from "@/components/BlogList";
 import Card from "@/components/Card";
 
 const query = groq `
-    *[_type=='post' && isProject == false] {
+    *[_type=='post'] {
         ...,
         author->,
         categories[]->

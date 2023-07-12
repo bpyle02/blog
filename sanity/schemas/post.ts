@@ -11,12 +11,6 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: "description",
-      description: "Enter a short description of the post",
-      title: "Description",
-      type: "string",
-    }),
-    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -24,6 +18,12 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+    }),
+    defineField({
+      name: "description",
+      description: "Enter a short description of the post",
+      title: "Description",
+      type: "string",
     }),
     defineField({
       name: 'author',
@@ -51,21 +51,6 @@ export default defineType({
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
-    }),
-    defineField({
-      name: 'isProject',
-      title: 'Is Project',
-      type: 'boolean',
-    }),
-    defineField({
-      name: 'code',
-      title: 'Code',
-      type: 'url',
-    }),
-    defineField({
-      name: 'liveDemo',
-      title: 'Live Demo',
-      type: 'url',
     }),
     defineField({
       name: 'publishedAt',

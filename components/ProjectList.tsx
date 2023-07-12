@@ -5,28 +5,28 @@ import ClientSideRoute from "./ClientSideRoute";
 import Link from "next/link";
 
 type Props = {
-    posts: Post[];
+    projects: Project[];
 };
 
-function BlogList({posts}: Props) {
+function ProjectList({projects}: Props) {
   return (
     // <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 gap-10 gap-y-16 pb-24">
-    //     {posts.map((post) => (
-    //         <div key={post._id} className="flex flex-col group cursor-pointer">
+    //     {projects.map((project) => (
+    //         <div key={project._id} className="flex flex-col group cursor-pointer">
     //             <div className="rounded-md border border-gray-300 group-hover:scale-105 transition-transform duration-200 ease-out">
-    //                 <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
+    //                 <ClientSideRoute key={project._id} route={`/project/${project.slug.current}`}>
     //                         <div className="relative w-full lg:h-60 md:h-44 h-44">
     //                             <Image
     //                                 className="object-cover object-left lg:object-center rounded-t-md"
-    //                                 src={urlFor(post.mainImage).url()}
-    //                                 alt={post.author.name}
+    //                                 src={urlFor(project.mainImage).url()}
+    //                                 alt={project.author.name}
     //                                 fill
     //                             />
     //                             {/* <div className="absolute bottom-0 w-fulltext-white p-5 flex justify-between">
     //                                 <div>
-    //                                     <p className="font-bold">{post.title}</p>
+    //                                     <p className="font-bold">{project.title}</p>
     //                                     <p>
-    //                                         {new Date(post._createdAt).toLocaleDateString(
+    //                                         {new Date(project._createdAt).toLocaleDateString(
     //                                             "en-US", {
     //                                                 day: "numeric",
     //                                                 month: "long",
@@ -36,7 +36,7 @@ function BlogList({posts}: Props) {
     //                                     </p>
     //                                 </div>
     //                                 <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
-    //                                     {post.categories.map((category) => (
+    //                                     {project.categories.map((category) => (
     //                                         <div key={category._id} className="text-center bg-[#2570d1] text-black px-3 py-1 rounded-full text-sm font-semibold">
     //                                             <p>{category.title}</p>
     //                                         </div>
@@ -46,11 +46,11 @@ function BlogList({posts}: Props) {
     //                         </div>
     //                         <div className="p-2">
     //                         <div className="flex-1">
-    //                             <p className="text-lg font-bold">{post.title}</p>
-    //                             <p className="line-clamp-2 text-gray-500">{post.description}</p>
+    //                             <p className="text-lg font-bold">{project.title}</p>
+    //                             <p className="line-clamp-2 text-gray-500">{project.description}</p>
     //                         </div>
     //                         <p className="mt-5 font-bold flex items-center group-hover:underline">
-    //                             Read Post
+    //                             Read project
     //                             <ArrowRightIcon className="ml-2 h-4 w-4 mt-1 -rotate-45" />
     //                         </p>
     //                         </div>
@@ -62,24 +62,24 @@ function BlogList({posts}: Props) {
 
     <div className="">
         <p className = "text-center text-2xl text-black sm:text-4xl font-bold">Projects</p>
-        {posts.map((post) => (
-            <div key={post._id} className="group md:mx-10 my-10 -mx-4">
+        {projects.map((project) => (
+            <div key={project._id} className="group md:mx-10 my-10 -mx-4">
                 <div className="group-hover:scale-105 transition-transform duration-200 ease-out">
-                    <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
+                    <ClientSideRoute key={project._id} route={`/project/${project.slug.current}`}>
                         <div className="md:flex bg-white shadow-xl rounded-xl md:w-full w-2/3 mx-auto">
                             <Image
-                            className="md:object-contain md:object-center md:rounded-l-xl md:rounded-r-none rounded-t-xl md:w-1/4"
-                            src={urlFor(post.mainImage).url()}
-                            alt={post.author.name}
-                            width={400}
-                            height={400}
+                                className="md:object-contain md:object-center md:rounded-l-xl md:rounded-r-none rounded-t-xl md:w-1/4"
+                                src={urlFor(project.mainImage).url()}
+                                alt={project.author.name}
+                                width={400}
+                                height={400}
                             />
                             {/* <div className="">
                                 <div className="absolute bottom-0 w-fulltext-white p-5 flex justify-between">
                                     <div>
-                                        <p className="font-bold">{post.title}</p>
+                                        <p className="font-bold">{project.title}</p>
                                         <p>
-                                            {new Date(post._createdAt).toLocaleDateString(
+                                            {new Date(project._createdAt).toLocaleDateString(
                                                 "en-US", {
                                                     day: "numeric",
                                                     month: "long",
@@ -89,7 +89,7 @@ function BlogList({posts}: Props) {
                                         </p>
                                     </div>
                                     <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
-                                        {post.categories.map((category) => (
+                                        {project.categories.map((category) => (
                                             <div key={category._id} className="text-center bg-[#2570d1] text-black px-3 py-1 rounded-full text-sm font-semibold">
                                                 <p>{category.title}</p>
                                             </div>
@@ -102,11 +102,11 @@ function BlogList({posts}: Props) {
                                     <div className="flex-1">
                                         <div className="md:flex md:flex-row">
                                             <div className="flex flex-row">
-                                                <p className="text-lg font-bold">{post.title}</p>
+                                                <p className="text-lg font-bold">{project.title}</p>
                                                 <p className="md:text-lg md:font-bold md:visible invisible">&nbsp;·&nbsp;</p>
                                             </div>
                                             <p className="text-lg">
-                                                {new Date(post._createdAt).toLocaleDateString(
+                                                {new Date(project._createdAt).toLocaleDateString(
                                                     "en-US", {
                                                         day: "numeric",
                                                         month: "long",
@@ -115,15 +115,15 @@ function BlogList({posts}: Props) {
                                                     )}
                                             </p>
                                         </div>
-                                        <p className="line-clamp-2 text-gray-500">{post.description}</p>
+                                        <p className="line-clamp-2 text-gray-500">{project.description}</p>
                                     </div>
                                     <p className="mt-4 font-bold flex bottom-0 items-center group-hover:underline">
-                                        Read Post
+                                        Read Project
                                         <ArrowRightIcon className="ml-2 h-4 w-4 mt-1 -rotate-45" />
                                     </p>
                                     <div className="mt-2">
-                                        <Link href={post.code} className="p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Code</Link>
-                                        <Link href={post.liveDemo} className="p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Live Demo</Link>
+                                        <Link href={project.code} className="p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Code</Link>
+                                        <Link href={project.demo} className="p-2 mr-4 inline-flex px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 font-semibold duration-300 transition-colors">Live Demo</Link>
                                     </div>
                                 </div>
                             </div>
@@ -137,4 +137,4 @@ function BlogList({posts}: Props) {
   )
 }
 
-export default BlogList;
+export default ProjectList;

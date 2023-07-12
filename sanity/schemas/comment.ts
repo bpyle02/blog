@@ -23,6 +23,15 @@ export default defineType({
                 type: 'post'
             }
         ]
-    })
+    }),
+    defineField({
+      name: 'project',
+      type: 'reference',
+      to: [
+          {
+              type: 'project'
+          }
+      ]
+  })
   ],
 })
