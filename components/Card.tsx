@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
-import logo from '/public/memoji.png'
+import logo from '../public/static/memoji.png'
 
 function Card()
 {
