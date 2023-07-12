@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
+import logo from '/public/memoji.png'
 
 function Card()
 {
@@ -10,7 +11,7 @@ function Card()
                 <div className = "">
                     {/* <img className = "w-32 mx-auto shadow-xl rounded-full drop-shadow-sm dark:shadow-gray-100/10" src = {profile} alt = ""/> */}
                     <Link href="/">
-                        <Image className="w-32 mx-auto shadow-xl rounded-full drop-shadow-sm" src="/memoji.png" alt="profile photo" width={128} height={128} />
+                        <Image className="w-32 mx-auto shadow-xl rounded-full drop-shadow-sm" src={logo} alt="profile photo" width={128} height={128} />
                     </Link>
                 </div>
                 <div className = "text-center mt-5">

@@ -2,18 +2,9 @@ import { groq } from "next-sanity";
 import { client } from "../../lib/sanity.client";
 import ProjectList from "@/components/ProjectList";
 import Card from "@/components/Card";
-import BlogList from "@/components/BlogList";
 
 const query = groq `
     *[_type=='project'] {
-        ...,
-        author->,
-        categories[]->,
-    } | order(_createdAt desc)
-`;
-
-const query2 = groq `
-    *[_type=='post'] {
         ...,
         author->,
         categories[]->,
@@ -27,8 +18,6 @@ export default async function HomePage() {
     return (
         <div>
             <Card />
-            <ProjectList projects={projects}/>
-            {/* <BlogList posts={posts} /> */}
-        </div>
+            <ProjectList projects={projects}/>        </div>
     );
 }
