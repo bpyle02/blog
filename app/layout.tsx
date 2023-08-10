@@ -1,8 +1,9 @@
+import { Metadata } from 'next';
 import '../styles/globals.css';
 
-export const metadata = {
-  title: "Brandon's Blog",
-  description: "Brandon's Blog",
+export const metadata:Metadata = {
+  title: "Brandon's Portfolio",
+  description: "Brandon's Personal Portfolio Website",
 }
 
 export default function RootLayout({

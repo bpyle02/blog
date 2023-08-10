@@ -7,6 +7,7 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../../../components/RichTextComponents.tsx";
 import { Form } from '../../../../components/Form.tsx'
+import { Metadata } from "next";
 
 type Props = {
     params: {
@@ -47,8 +48,10 @@ async function Post({params: {slug}}: Props) {
 
     const post: Post = await client.fetch(query, { slug: slug });
 
+    
+
     return (
-        <div>
+        <div className="max-w-[90rem] mx-auto">
             <img
                 className="w-full h-auto object-cover"
                 src={urlFor(post.mainImage).url()}

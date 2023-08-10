@@ -2,6 +2,14 @@ import { groq } from "next-sanity";
 import { client } from "../../../lib/sanity.client";
 import BlogList from "@/components/BlogList";
 import Card from "@/components/Card";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+    title: {
+        absolute: "Brandon's Blog"
+    },
+    description: "Brandon's Personal Blog",
+}
 
 const query = groq `
     *[_type=='post'] {

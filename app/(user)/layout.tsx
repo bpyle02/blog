@@ -2,11 +2,6 @@ import '../../styles/globals.css';
 
 import Header from '../../components/Header.tsx';
 
-export const metadata = {
-  title: "Brandon's Blog",
-  description: "Brandon's Blog",
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -14,8 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='max-w-[90rem] mx-auto'>
-        <Header />
+      <body className=''>
         {children}
       </body>
     </html>
