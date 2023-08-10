@@ -9,7 +9,7 @@ type Props = {
 
 function BlogList({posts}: Props) {
   return (
-    <div className="">
+    <div className="max-w-[90rem]">
         <p className = "text-center text-2xl text-black sm:text-4xl font-bold">Recent Posts</p>
         {posts.map((post) => (
             <div key={post._id} className="group md:mx-10 my-10 -mx-4">

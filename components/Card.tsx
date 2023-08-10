@@ -6,7 +6,7 @@ import logo from '../public/static/memoji.png'
 function Card()
 {
     return (
-        <div className = "w-full mb-20 mt-26">
+        <div className = "w-full mb-20 mt-36">
             <div className = "flex flex-col justify-center max-w-xs mx-auto bg-white shadow-xl rounded-xl p-5">
                 <div className = "">
                     {/* <img className = "w-32 mx-auto shadow-xl rounded-full drop-shadow-sm dark:shadow-gray-100/10" src = {profile} alt = ""/> */}
