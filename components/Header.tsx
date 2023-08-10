@@ -98,7 +98,7 @@ function Header()
         //   </nav>
         // </div>
 
-        <div className='w-full fixed top-0 left-0'>
+        <div className='w-full fixed top-0 left-0 z-50'>
           <div className='md:flex items-center justify-between bg-gray-100 py-4 md:px-10 px-7'>
             <Link className='font-bold text-xl cursor-pointer flex items-center text-black' href = "/">
               <span className='text-[#2570d1] mr-1 pt-2 pr-4 sm:text-3xl'>
