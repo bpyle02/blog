@@ -33,7 +33,7 @@ function ProjectList({projects}: Props) {
                                                 <p className="md:text-lg md:font-bold md:visible invisible">&nbsp;·&nbsp;</p>
                                             </div>
                                             <p className="text-lg">
-                                                {new Date(project._createdAt).toLocaleDateString(
+                                                {new Date(project._updatedAt).toLocaleDateString(
                                                     "en-US", {
                                                         day: "numeric",
                                                         month: "long",

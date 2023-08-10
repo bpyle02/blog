@@ -40,7 +40,7 @@ async function Project({params: {slug}}: Props) {
             "comments": *[_type == 'comment' && project._ref == ^._id] {
                 name,
                 text,
-                _createdAt
+                _updatedAt
             }
         }
     `
@@ -70,7 +70,7 @@ async function Project({params: {slug}}: Props) {
                                 width={40}
                             />
                             <div>
-                                <p className="">Posted by {project.author.name} on {new Date(project._createdAt).toLocaleDateString("en-US", {
+                                <p className="">Posted by {project.author.name} on {new Date(project._updatedAt).toLocaleDateString("en-US", {
                                     day: "numeric",
                                     month: "long",
                                     year: "numeric",

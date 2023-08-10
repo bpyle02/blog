@@ -40,7 +40,7 @@ async function Post({params: {slug}}: Props) {
             "comments": *[_type == 'comment' && post._ref == ^._id] {
                 name,
                 text,
-                _createdAt
+                _updatedAt
             }
         }
     `
@@ -72,7 +72,7 @@ async function Post({params: {slug}}: Props) {
                                 width={40}
                             />
                             <div>
-                                <p className="">Posted by {post.author.name} on {new Date(post._createdAt).toLocaleDateString("en-US", {
+                                <p className="">Posted by {post.author.name} on {new Date(post._updatedAt).toLocaleDateString("en-US", {
                                     day: "numeric",
                                     month: "long",
                                     year: "numeric",
