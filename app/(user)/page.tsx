@@ -18,6 +18,7 @@ export default async function HomePage() {
     return (
         <div>
             <Card />
-            <ProjectList projects={projects}/>        </div>
+            <ProjectList projects={projects}/>
+        </div>
     );
 }

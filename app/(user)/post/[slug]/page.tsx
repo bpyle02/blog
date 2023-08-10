@@ -51,7 +51,7 @@ async function Post({params: {slug}}: Props) {
     
 
     return (
-        <div className="max-w-[90rem] mx-auto">
+        <div className="max-w-[90rem] mx-auto mt-[72px]">
             <img
                 className="w-full h-auto object-cover"
                 src={urlFor(post.mainImage).url()}
