@@ -7,7 +7,6 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../../../components/RichTextComponents.tsx";
 import { Form } from '../../../../components/Form.tsx'
-import { Metadata } from "next";
 
 type Props = {
     params: {
