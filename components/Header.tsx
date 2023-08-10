@@ -104,7 +104,7 @@ function Header()
               <span className='text-[#2570d1] mr-1 pt-2 pr-4 sm:text-3xl'>
                 <Image className="" src={logo} alt="profile photo" width={32} height={32} />
               </span>
-              Brandon's Portfolio
+              Brandon&apos;s Portfolio
             </Link>
             
             <div onClick={() => setOpen(!open)} className='text-4xl absolute right-8 top-6 cursor-pointer md:hidden'>
