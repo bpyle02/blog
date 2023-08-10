@@ -112,19 +112,19 @@ function Header()
             </div>
       
             <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-gray-100 md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? ' top-16 ':'top-[-490px]'}`}>
-                  <li className='md:ml-8 text-xl md:my-0 my-7'>
-                    <Link href='/' className='text-black py-2 px-4 rounded font-semibold hover:bg-gray-200 duration-300 transition-colors'>Home</Link>
+                  <li className='md:ml-4 md:my-0 my-7'>
+                    <Link href='/' className='text-black py-2 px-4 rounded-md font-semibold hover:bg-gray-200 duration-300 transition-colors'>Home</Link>
                   </li>
-                  <li className='md:ml-8 text-xl md:my-0 my-7'>
-                    <Link href='/blog' className='text-black py-2 px-4 rounded font-semibold hover:bg-gray-200 duration-300 transition-colors'>Blog</Link>
+                  <li className='md:ml-4 md:my-0 my-7'>
+                    <Link href='/blog' className='text-black py-2 px-4 rounded-md font-semibold hover:bg-gray-200 duration-300 transition-colors'>Blog</Link>
                   </li>
-                  <li className='md:ml-8 text-xl md:my-0 my-7'>
-                    <Link href='/about' className='text-black py-2 px-4 rounded font-semibold hover:bg-gray-200 duration-300 transition-colors'>About</Link>
+                  <li className='md:ml-4 md:my-0 my-7'>
+                    <Link href='/about' className='text-black py-2 px-4 rounded-md font-semibold hover:bg-gray-200 duration-300 transition-colors'>About</Link>
                   </li>
-                  <li className='md:ml-8 text-xl md:my-0 my-7'>
-                    <Link href='/contact' className='text-black py-2 px-4 rounded font-semibold hover:bg-gray-200 duration-300 transition-colors'>Contact</Link>
+                  <li className='md:ml-4 md:my-0 my-7'>
+                    <Link href='/contact' className='text-black py-2 px-4 rounded-md font-semibold hover:bg-gray-200 duration-300 transition-colors'>Contact</Link>
                   </li>
-              <Link className='bg-[#2570d1] text-white hover:text-black py-2 px-6 rounded md:ml-8 hover:bg-gray-200 duration-300 transition-colors' href = "/">Download My Resume</Link>
+              <Link className='bg-[#2570d1] text-white font-semibold hover:text-black py-2 px-6 rounded-md md:ml-8 hover:bg-gray-200 duration-300 transition-colors' href = "/">Download My Resume</Link>
             </ul>
           </div>
         </div>
