@@ -14,8 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='mx-auto max-w-[90rem]'>
-        <Header />
+      <body>
         {children}
       </body>
     </html>
