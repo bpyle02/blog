@@ -1,15 +1,15 @@
 "use client"
 
 import Image from "next/image";
-import {RxHamburgerMenu} from 'react-icons/rx'
-import {RxCross1} from 'react-icons/rx'
+// import {RxHamburgerMenu} from 'react-icons/rx'
+// import {RxCross1} from 'react-icons/rx'
 import Link from "next/link";
 
 import logo from '../public/static/memoji.png'
 import { useState } from "react";
-import { LogoIonic } from "react-ionicons"
+// import { LogoIonic } from "react-ionicons"
 import { MenuOutline } from 'react-ionicons'
-import { CloseOutline } from 'react-ionicons'
+// import { CloseOutline } from 'react-ionicons'
 
 function Header()
 {
@@ -124,7 +124,7 @@ function Header()
                   <li className='md:ml-4 md:my-0 my-7'>
                     <Link href='/contact' className='text-black py-2 px-4 rounded-md font-semibold hover:bg-gray-200 duration-300 transition-colors'>Contact</Link>
                   </li>
-              <Link href = "https://cloud.brandonpyle.com/s/RSgMaMS35koJBx7" className='bg-[#2570d1] text-white font-semibold hover:text-black py-2 px-6 rounded-md md:ml-8 hover:bg-gray-200 duration-300 transition-colors'>Download My Resume</Link>
+              <Link href = "https://cloud.brandonpyle.com/s/WkScrf7HSm4TfFf" className='bg-[#2570d1] text-white font-semibold hover:text-black py-2 px-6 rounded-md md:ml-8 hover:bg-gray-200 duration-300 transition-colors'>Download My Resume</Link>
             </ul>
           </div>
         </div>
