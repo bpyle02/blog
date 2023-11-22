@@ -50,7 +50,7 @@ async function Post({params: {slug}}: Props) {
     
 
     return (
-        <div className="max-w-[90rem] mx-auto mt-[72px]">
+        <div className="max-w-[70rem] mx-auto mt-[72px]">
             <img
                 className="w-full h-auto object-cover"
                 src={urlFor(post.mainImage).url()}
@@ -80,14 +80,11 @@ async function Post({params: {slug}}: Props) {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        {/* <h2>{post.description}</h2> */}
-                        <div className="flex items-center space-x-2  mb-12">
-                            <p>Categories:</p>
-                            {post.categories.map((category) =>(
-                                <p key={category._id} className="bg-[#2570d1] text-white px-3 py-1 rounded-full text-sm font-semibold mt-1">{category.title}</p>
-                            ))}
-                        </div>
+                    <div className="flex flex-wrap items-center mb-12">
+                        <p className="mr-2">Categories:</p>
+                        {post.categories.map((category) =>(
+                            <p key={category._id} className="bg-[#2570d1] text-white px-3 py-1 rounded-full text-sm font-semibold mt-1 mr-2">{category.title}</p>
+                        ))}
                     </div>
                 </section>
 

@@ -16,7 +16,7 @@ export const revalidate = 60;
 export default async function HomePage() {
     const projects = await client.fetch(query);
     return (
-        <div className="mx-auto max-w-[90rem]">
+        <div className="mx-auto max-w-[70rem]">
             <Card />
             <ProjectList projects={projects}/>
         </div>

@@ -24,7 +24,7 @@ export const revalidate = 60;
 export default async function HomePage() {
     const posts = await client.fetch(query);
     return (
-        <div className="mx-auto max-w-[90rem]">
+        <div className="mx-auto max-w-[70rem]">
             <Card />
             <BlogList posts={posts}/>
         </div>
