@@ -1,5 +1,3 @@
-"use client"
-
 import { client } from "@/lib/sanity.client";
 import urlFor from "@/lib/urlFor";
 import { groq } from "next-sanity";
