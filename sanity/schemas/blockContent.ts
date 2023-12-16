@@ -1,17 +1,4 @@
-import {defineType, defineArrayMember, defineField} from 'sanity'
-import { MdCode } from 'react-icons/md'
-
-/**
- * This is the schema type for block content used in the post document type
- * Importing this type into the studio configuration's `schema` property
- * lets you reuse it in other document types with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
-
+import { defineType, defineArrayMember } from 'sanity'
 
 export default defineType({
   title: 'Block Content',
@@ -39,7 +26,6 @@ export default defineType({
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting
         decorators: [
-          {title: 'Code', value: 'code'},
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
           {title: 'Underline', value: 'underline'},
@@ -77,15 +63,5 @@ export default defineType({
         }
       ]
     }),
-    defineArrayMember({
-      name: 'myCodeField',
-      title: 'My code field',
-      type: 'code',
-      // icon: MdCode,
-      options: {
-        language: 'cpp',
-        withFilename: true,
-      },
-    })
   ],
 })
