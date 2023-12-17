@@ -18,11 +18,11 @@ function ProjectList({projects}: Props) {
                     <ClientSideRoute key={project._id} route={`/project/${project.slug.current}`}>
                         <div className="md:flex bg-white shadow-xl rounded-xl md:w-full w-2/3 mx-auto">
                             <Image
-                                className="md:object-cover md:aspect-video md:object-center object-center md:rounded-l-xl md:rounded-r-none rounded-t-xl md:w-1/4"
+                                className="md:object-cover md:aspect-video md:object-center object-center md:rounded-l-xl md:rounded-r-none rounded-t-xl max-w-fit"
                                 src={urlFor(project.mainImage).url()}
                                 alt={project.author.name}
-                                width={600}
-                                height={338}
+                                width={300}
+                                height={150}
                             />
                             <div>
                                 <div className="p-2">

@@ -4,8 +4,6 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FaRegCopy } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 
-
-
 export function CodeBlock(props) {
   const [copy, setCopy] = useState(false)
 
