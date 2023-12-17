@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import urlFor from "@/lib/urlFor";
+import { CodeBlock } from "./CodeBlock";
 
 export const RichTextComponents = {
     types: {
@@ -16,6 +17,7 @@ export const RichTextComponents = {
                 </div>
             );
         },
+        code: CodeBlock
     },
     list: {
         bullet: ({children}: any) => (

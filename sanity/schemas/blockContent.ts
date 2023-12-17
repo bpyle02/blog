@@ -1,4 +1,4 @@
-import { defineType, defineArrayMember } from 'sanity'
+import { defineType, defineArrayMember, defineField } from 'sanity'
 
 export default defineType({
   title: 'Block Content',
@@ -63,5 +63,13 @@ export default defineType({
         }
       ]
     }),
+    defineArrayMember({
+          name: 'code',
+          title: 'Code',
+          type: 'code',
+          options: {
+            withFilename: true,
+          },
+    })
   ],
 })
