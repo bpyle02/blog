@@ -8,7 +8,7 @@ const query = groq `
         ...,
         author->,
         categories[]->,
-    } | order(_createdAt desc)
+    } | order(_updatedAt desc)
 `;
 
 export const revalidate = 60;

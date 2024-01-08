@@ -42,7 +42,7 @@ async function Post({params: {slug}}: Props) {
                 text,
                 _updatedAt
             }
-        }
+        } | order(_updatedAt asc)
     `
 
     const post: Post = await client.fetch(query, { slug: slug });

@@ -42,7 +42,7 @@ async function Project({params: {slug}}: Props) {
                 text,
                 _updatedAt
             }
-        }
+        } 
     `
 
     const project: Project = await client.fetch(query, { slug: slug });
