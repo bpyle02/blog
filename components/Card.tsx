@@ -23,7 +23,7 @@ function Card()
                             <FaGithub />
                             <span className = "sr-only">Github</span>
                         </a>
-                        <a className = "text-xl m-1 p-1 sm:m-2 sm:p-2 hover:bg-gray-200 transition-colors duration-300 rounded-full" href = "mailto:mail4brando@gmail.com">
+                        <a className = "text-xl m-1 p-1 sm:m-2 sm:p-2 hover:bg-gray-200 transition-colors duration-300 rounded-full" href = "mailto:mail@brandonpyle.com">
                             <FaEnvelope />
                             <span className = "sr-only">Email</span>
                         </a>
