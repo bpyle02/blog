@@ -124,7 +124,7 @@ function Header()
                   <li className='md:ml-4 md:my-0 my-7'>
                     <Link href='/contact' className='text-black py-2 px-4 rounded-md font-semibold hover:bg-gray-200 duration-300 transition-colors'>Contact</Link>
                   </li>
-              <Link href = "https://cloud.brandonpyle.com/s/JWPwZJPqACKsf7p" className='bg-[#2570d1] text-white font-semibold hover:text-black py-2 px-6 rounded-md md:ml-8 hover:bg-gray-200 duration-300 transition-colors'>Download My Resume</Link>
+              <Link href = "https://cloud.brandonpyle.com/s/7kXZ8GF65NQLwJq" className='bg-[#2570d1] text-white font-semibold hover:text-black py-2 px-6 rounded-md md:ml-8 hover:bg-gray-200 duration-300 transition-colors'>Download My Resume</Link>
             </ul>
           </div>
         </div>
