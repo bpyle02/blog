@@ -5,7 +5,7 @@ import Image from "next/image";
 // import {RxCross1} from 'react-icons/rx'
 import Link from "next/link";
 
-import logo from '../public/static/memoji.png'
+// import profPic from "../public/images/logo.png";
 import { useState } from "react";
 // import { LogoIonic } from "react-ionicons"
 import { MenuOutline } from 'react-ionicons'
@@ -102,7 +102,7 @@ function Header()
           <div className='md:flex items-center justify-between bg-gray-100 py-4 md:px-10 px-7'>
             <Link className='font-bold text-xl cursor-pointer flex items-center text-black' href = "/">
               <span className='text-[#2570d1] mr-1 pt-2 pr-4 sm:text-3xl'>
-                <Image className="" src={logo} alt="profile photo" width={32} height={32} />
+                <Image className="" src="/memoji.png" alt="profile photo" width={32} height={32} />
               </span>
               Brandon&apos;s Portfolio
             </Link>
@@ -124,7 +124,7 @@ function Header()
                   <li className='md:ml-4 md:my-0 my-7'>
                     <Link href='/contact' className='text-black py-2 px-4 rounded-md font-semibold hover:bg-gray-200 duration-300 transition-colors'>Contact</Link>
                   </li>
-              <Link href = "https://cloud.brandonpyle.com/s/7kXZ8GF65NQLwJq" className='bg-[#2570d1] text-white font-semibold hover:text-black py-2 px-6 rounded-md md:ml-8 hover:bg-gray-200 duration-300 transition-colors'>Download My Resume</Link>
+              <Link href = "https://cloud.brandonpyle.com/s/dyXoikm2Xz5fByQ" className='bg-[#2570d1] text-white font-semibold hover:text-black py-2 px-6 rounded-md md:ml-8 hover:bg-gray-200 duration-300 transition-colors'>Download My Resume</Link>
             </ul>
           </div>
         </div>
