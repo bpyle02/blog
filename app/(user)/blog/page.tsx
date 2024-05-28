@@ -3,6 +3,7 @@ import { client } from "../../../lib/sanity.client";
 import BlogList from "@/components/BlogList";
 import Card from "@/components/Card";
 import { Metadata } from "next";
+import Contact from "@/components/Contact";
 
 export const metadata:Metadata = {
     title: {
@@ -27,6 +28,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[70rem]">
             <Card />
             <BlogList posts={posts}/>
+            <Contact />
         </div>
     );
 }
