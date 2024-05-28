@@ -42,7 +42,7 @@ export default function ContactForm() {
     return (
         <div>
 
-            <p className = "text-4xl mb-20 font-bold text-center">Let's get in touch</p>
+            <p className = "text-4xl mb-20 font-bold text-center">Let&apos;s get in touch</p>
 
             <form onSubmit={handleSubmit}>
                 <div className="w-full flex flex-col my-4">
