@@ -1,62 +1,82 @@
+"use client"
+
 import Image from "next/image";
 import urlFor from "@/lib/urlFor";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import ClientSideRoute from "./ClientSideRoute";
+import { useState } from 'react';
 
 type Props = {
-    posts: Post[];
+    posts: Project[];
 };
 
-function BlogList({posts}: Props) {
+const ProjectList = ({ posts }: Props) => {
+    const itemsPerPage = 5;
+    const [currentPage, setCurrentPage] = useState(1);
+  
+    const totalPages = Math.ceil(posts.length / itemsPerPage);
+  
+    const nextPage = () => {
+      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    };
+  
+    const prevPage = () => {
+      setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    };
+  
+    // Slice the data array to display only items for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentItems = posts.slice(startIndex, endIndex);
+
   return (
-    <div className="max-w-[90rem]">
-        <p className = "text-center text-2xl text-black sm:text-4xl font-bold">Recent Posts</p>
-        {posts.map((post) => (
-            <div key={post._id} className="group md:mx-10 my-10 -mx-4">
-                <div className="group-hover:scale-105 transition-transform duration-200 ease-out">
-                    <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>    
-                        <div className="md:flex bg-white shadow-xl rounded-xl md:w-full w-2/3 mx-auto">
+    <div className="mx-8">
+        <p className="text-5xl text-black font-bold">Recent Posts</p>
+        <hr className="h-[0.6rem] bg-[#2570d1] border-0 mb-20" />
+        {currentItems.map((post, index) => (
+            <div key={index} className="group mb-8">
+                <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
+                    <div className="flex flex-col md:flex-row">
+                        <div className="md:w-1/2 w-full md:pr-[1rem] md:flex md:items-center">
                             <Image
-                                className="md:object-cover md:object-center object-center md:rounded-l-xl md:rounded-r-none rounded-t-xl md:max-w-fit"
+                                className="rounded-xl group-hover:shadow-2xl duration-300 transition-shadow"
                                 src={urlFor(post.mainImage).url()}
                                 alt={post.author.name}
-                                width={300}
+                                layout="responsive"
+                                width={500}
                                 height={150}
                             />
-                            <div>
-                                <div className="p-2">
-                                    <div className="flex-1">
-                                        <div className="md:flex md:flex-row">
-                                            <div className="flex flex-row">
-                                                <p className="text-lg font-bold">{post.title}</p>
-                                                <p className="md:text-lg md:font-bold md:visible invisible">&nbsp;·&nbsp;</p>
-                                            </div>
-                                            <p className="text-lg">
-                                                {new Date(post._updatedAt).toLocaleDateString(
-                                                    "en-US", {
-                                                        day: "numeric",
-                                                        month: "long",
-                                                        year: "numeric",
-                                                    }
-                                                    )}
-                                            </p>
-                                        </div>
-                                        <p className="line-clamp-2 text-gray-500">{post.description}</p>
-                                    </div>
-                                    <p className="mt-4 font-bold flex bottom-0 items-center group-hover:underline">
-                                        Read Post
-                                        <ArrowRightIcon className="ml-2 h-4 w-4 mt-1 -rotate-45" />
-                                    </p>
-                                </div>
-                            </div>
                         </div>
-                    </ClientSideRoute>
-                </div>
+                        <div className="md:w-1/2 md:pl-[1rem]">
+                            <div className="flex flex-row mt-8 md:mt-0">
+                                <p className="text-lg">
+                                    {String(new Date(post._updatedAt).toLocaleDateString(
+                                        "en-US", {
+                                            day: "numeric",
+                                            month: "long",
+                                            year: "numeric",
+                                        }
+                                        )).toUpperCase()}
+                                </p>
+                            </div>
+                            <p className="text-4xl font-bold my-5 group-hover:text-[#2570d1] duration-300 transition-colors">{post.title}</p>
+                            <div className="flex flex-wrap items-center mb-5">
+                                {post.categories.map((category) =>(
+                                    <p key={category._id} className="bg-[#2570d1] text-white px-3 py-1 rounded-lg text-sm font-semibold mt-1 mr-2">{category.title}</p>
+                                ))}
+                            </div>
+                            <p className="text-lg">{post.description}</p>
+                        </div>
+                    </div>
+                </ClientSideRoute>
+                <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
             </div>
         ))}
+        <div className="flex justify-center">
+            <button onClick={prevPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Previous Page</button>
+            <button onClick={nextPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Next Page</button>
+        </div>
     </div> 
-
   )
 }
 
-export default BlogList;
+export default ProjectList;

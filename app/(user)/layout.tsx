@@ -1,6 +1,7 @@
 import '../../styles/globals.css';
 
 import Header from '../../components/Header.tsx';
+import Footer from '@/components/Footer.tsx';
 
 import { Metadata } from "next";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className=''>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

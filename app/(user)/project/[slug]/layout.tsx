@@ -2,6 +2,7 @@ import { client } from "@/lib/sanity.client";
 import { groq } from "next-sanity";
 import { Metadata } from "next";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 type Props = {
     params: {
@@ -41,6 +42,7 @@ export default function ProjectLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
