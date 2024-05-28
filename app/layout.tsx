@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import '../styles/globals.css';
-import Head from 'next/head';
 
 export const metadata:Metadata = {
   metadataBase: new URL("https://www.brandonpyle.com"),

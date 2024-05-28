@@ -28,7 +28,7 @@ async function AboutPage() {
     const data = await client.fetch(query);
     
     return (
-        <div className = "max-w-[70rem] mx-auto mt-[145px]">
+        <div className = "w-full h-screen flex flex-col items-center justify-center md:mt-0 mt-28">
             <div className = "pt-10">
                 <Link href="/">
                     <Image className="w-40 mx-auto shadow-xl rounded-full drop-shadow-sm" src={urlFor(data.image.url).url()} alt="profile photo" width={128} height={128} />
@@ -37,7 +37,7 @@ async function AboutPage() {
             <div className="text-center">
                 <h1 className="text-3xl font-bold mt-12">Hi, my name is {data.name}!</h1>
             </div>
-            <div className="mt-12 px-4 pb-4" >
+            <div className="mt-12 max-w-[70rem] px-5 md:px-0" >
                 <PortableText value={data.bio} components={RichTextComponents} />
             </div>
         </div>

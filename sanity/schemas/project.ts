@@ -39,10 +39,10 @@ export default defineType({
       type: 'string',
       options: {
           list: [
-              {value: 'Personal', title: 'Personal'},
-              {value: 'Client', title: 'Client'},
-              {value: 'School', title: 'School'},
-              {value: 'Professional', title: 'Professional'}
+              {value: 'Personal Project', title: 'Personal Project'},
+              {value: 'Client Commission', title: 'Client Commission'},
+              {value: 'School Project', title: 'School Project'},
+              {value: 'Professional Project', title: 'Professional Project'}
           ]
       }
     }),
