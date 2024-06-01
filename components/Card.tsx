@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
-import logo from '../public/static/memoji.png'
+import logo from '../public/static/profile1.png'
 
 function Card()
 {
@@ -9,7 +9,7 @@ function Card()
         <div className = "w-full h-screen flex md:flex-row flex-col items-center justify-center">
             <div className = "">
                 <Link href="/">
-                    <Image className="w-48" src={logo} alt="profile photo" width={1000} height={1000} />
+                    <Image className="w-48 rounded-md aspect-[3/4] object-cover mr-8" src={logo} alt="profile photo" width={1000} height={1000} />
                 </Link>
             </div>
             <div className = "md:border-l-2 px-6">

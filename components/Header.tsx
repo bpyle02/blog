@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import logo from '../public/static/memoji.png'
+import logo from '../public/static/profile.png'
 import { useState } from "react";
 import { MenuOutline } from 'react-ionicons'
 

@@ -5,7 +5,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
 function Footer()
 {
     return (
-        <div className = "border-t-3/2 mt-72 mb-10 py-5">
+        <div className = "border-t-3/2 mt-72 mb-10 px-5 text-center">
             <div className = "flex justify-center mt-4">
             <a className = "text-xl m-1 p-1 sm:m-2 sm:p-2 hover:text-[#2570d1] transition-colors duration-300" href = "https://www.github.com/bpyle02">
                 <FaGithub />
