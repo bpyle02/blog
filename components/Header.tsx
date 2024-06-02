@@ -8,15 +8,6 @@ import { MenuOutline } from 'react-ionicons'
 
 function Header()
 {
-    // const [navbar, setNavbar] = useState(false)
-
-    let Links =[
-      {name:"Home",link:"/"},
-      {name:"Blog",link:"/blog"},
-      {name:"About",link:"/about"},
-      {name:"Contact",link:"/contact"},
-    ];
-
     let [open, setOpen] = useState(false);
 
     return (

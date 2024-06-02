@@ -31,7 +31,7 @@ async function AboutPage() {
         <div className = "w-full h-screen flex flex-col items-center justify-center md:mt-0 mt-28">
             <div className = "pt-10">
                 <Link href="/">
-                    <Image className="w-40 mx-auto shadow-xl rounded-full drop-shadow-sm" src={urlFor(data.image.url).url()} alt="profile photo" width={128} height={128} />
+                    <Image className="w-40 mx-auto rounded-full" src={urlFor(data.image.url).url()} alt="profile photo" width={1000} height={1000} />
                 </Link>
             </div>
             <div className="text-center">
