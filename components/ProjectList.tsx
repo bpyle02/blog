@@ -9,6 +9,8 @@ type Props = {
     projects: Project[];
 };
 
+var projectListID = document.getElementById('projectlist');
+
 const ProjectList = ({ projects }: Props) => {
     const itemsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(1);
@@ -27,16 +29,20 @@ const ProjectList = ({ projects }: Props) => {
   
     const nextPage = () => {
       setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-      document.getElementById('projectlist').scrollIntoView({
-        behavior: "smooth"
-      });
+      if (projectListID) {
+        projectListID.scrollIntoView({
+            behavior: "smooth"
+        });
+      }
     };
   
     const prevPage = () => {
       setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-      document.getElementById('projectlist').scrollIntoView({
-        behavior: "smooth"
-      });
+      if (projectListID) {
+        projectListID.scrollIntoView({
+            behavior: "smooth"
+        });
+      }
     };
   
     // Filter projects based on the selected category

@@ -9,7 +9,9 @@ type Props = {
     posts: Project[];
 };
 
-const ProjectList = ({ posts }: Props) => {
+var blogListID = document.getElementById('projectlist');
+
+const BlogList = ({ posts }: Props) => {
     const itemsPerPage = 5;
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -26,16 +28,20 @@ const ProjectList = ({ posts }: Props) => {
   
     const nextPage = () => {
       setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-      document.getElementById('projectlist').scrollIntoView({
-        behavior: "smooth"
-      });
+      if (blogListID) {
+        blogListID.scrollIntoView({
+            behavior: "smooth"
+        });
+      }
     };
   
     const prevPage = () => {
       setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-      document.getElementById('projectlist').scrollIntoView({
-        behavior: "smooth"
-      });
+      if (blogListID) {
+        blogListID.scrollIntoView({
+            behavior: "smooth"
+        });
+      }
     };
   
     // Filter posts based on the selected category
@@ -118,4 +124,4 @@ const ProjectList = ({ posts }: Props) => {
   )
 }
 
-export default ProjectList;
+export default BlogList;
