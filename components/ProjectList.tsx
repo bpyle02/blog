@@ -4,12 +4,12 @@ import Image from "next/image";
 import urlFor from "@/lib/urlFor";
 import ClientSideRoute from "./ClientSideRoute";
 import { useState, useEffect } from 'react';
+import Link from "next/link";
 
 type Props = {
     projects: Project[];
 };
 
-var projectListID = document.getElementById('projectlist');
 
 const ProjectList = ({ projects }: Props) => {
     const itemsPerPage = 5;
@@ -18,6 +18,7 @@ const ProjectList = ({ projects }: Props) => {
     const [totalPages, setTotalPages] = useState(1); // Initialize totalPages with 1
     // const totalPages = Math.ceil(projects.length / itemsPerPage);
 
+    
     // Recalculate totalPages whenever projects or selectedCategory changes
     useEffect(() => {
         const filteredProjects = selectedCategory ? projects.filter(project =>
@@ -26,23 +27,14 @@ const ProjectList = ({ projects }: Props) => {
         const newTotalPages = Math.ceil(filteredProjects.length / itemsPerPage);
         setTotalPages(newTotalPages || 1); // Ensure totalPages is at least 1
     }, [projects, selectedCategory]);
+    
   
     const nextPage = () => {
       setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-      if (projectListID) {
-        projectListID.scrollIntoView({
-            behavior: "smooth"
-        });
-      }
     };
   
     const prevPage = () => {
       setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-      if (projectListID) {
-        projectListID.scrollIntoView({
-            behavior: "smooth"
-        });
-      }
     };
   
     // Filter projects based on the selected category
@@ -120,8 +112,12 @@ const ProjectList = ({ projects }: Props) => {
             ))}
         </span>
         <div className="flex justify-center">
-            <button onClick={prevPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Previous Page</button>
-            <button onClick={nextPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Next Page</button>
+            <Link href="#projectlist">
+                <button onClick={prevPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Previous Page</button>
+            </Link>
+            <Link href="#projectlist">
+                <button onClick={nextPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Next Page</button>
+            </Link>
         </div>
     </div> 
   )

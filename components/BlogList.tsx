@@ -4,12 +4,11 @@ import Image from "next/image";
 import urlFor from "@/lib/urlFor";
 import ClientSideRoute from "./ClientSideRoute";
 import { useState, useEffect } from 'react';
+import Link from "next/link";
 
 type Props = {
     posts: Project[];
 };
-
-var blogListID = document.getElementById('projectlist');
 
 const BlogList = ({ posts }: Props) => {
     const itemsPerPage = 5;
@@ -28,20 +27,10 @@ const BlogList = ({ posts }: Props) => {
   
     const nextPage = () => {
       setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-      if (blogListID) {
-        blogListID.scrollIntoView({
-            behavior: "smooth"
-        });
-      }
     };
   
     const prevPage = () => {
       setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-      if (blogListID) {
-        blogListID.scrollIntoView({
-            behavior: "smooth"
-        });
-      }
     };
   
     // Filter posts based on the selected category
@@ -63,7 +52,7 @@ const BlogList = ({ posts }: Props) => {
     <div className="mx-8">
         <p className="text-5xl text-black font-bold">Recent Posts</p>
         <hr className="h-[0.6rem] bg-[#2570d1] border-0 mb-20" />
-        <span id="projectlist" className="scroll-mt-56">
+        <span id="bloglist" className="scroll-mt-56">
             {currentItems.map((post, index) => (
                 <div key={index} className="mb-8">
                         <div className="flex flex-col md:flex-row">
@@ -117,8 +106,12 @@ const BlogList = ({ posts }: Props) => {
             ))}
         </span>
         <div className="flex justify-center">
-            <button onClick={prevPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Previous Page</button>
-            <button onClick={nextPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Next Page</button>
+            <Link href="#bloglist">
+                <button onClick={prevPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Previous Page</button>
+            </Link>
+            <Link href="#bloglist">
+                <button onClick={nextPage} className={`bg-[#2570d1] text-white font-semibold py-2 px-6 rounded-md mr-8 ${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:text-black hover:bg-gray-200 duration-300 transition-colors"}`}>Next Page</button>
+            </Link>
         </div>
     </div> 
   )

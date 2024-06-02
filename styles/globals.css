@@ -16,6 +16,10 @@
   }
 } */
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgb(243 244 246);
 }
